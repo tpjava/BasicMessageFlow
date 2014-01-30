@@ -18,7 +18,7 @@ import java.util.List;
 public class ConsumerImpl implements Consumer {
     private List<String> messageQueue;
     private List<ConsumerListener> consumerListeners = new ArrayList<ConsumerListener>();
-    private boolean running;
+    private volatile boolean running;
     private Object lock;
 
     public ConsumerImpl(List<String> messageQueue, Object lock) {

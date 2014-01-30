@@ -15,7 +15,7 @@ import java.util.Objects;
  * To change this template use File | Settings | File Templates.
  */
 public class ProducerImpl implements Producer {
-    private boolean running;
+    private volatile boolean running;
     private List<String> messageQueue;
     private Object lock;
 
