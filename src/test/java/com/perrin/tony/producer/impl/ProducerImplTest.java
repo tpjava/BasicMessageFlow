@@ -3,7 +3,7 @@ package com.perrin.tony.producer.impl;/**
  */
 
 import com.perrin.tony.producerconsumer.producer.impl.ProducerImpl;
-import junit.framework.Assert;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -28,11 +28,6 @@ public class ProducerImplTest {
     public void testStartingProducer() {
         ProducerImpl producerImpl = new ProducerImpl(list, new Object());
         producerImpl.startProducer();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         Assert.assertTrue(producerImpl.isRunning());
         producerImpl.stopRunning();
     }
@@ -41,18 +36,8 @@ public class ProducerImplTest {
     public void testStoppingProducer() {
         ProducerImpl producerImpl = new ProducerImpl(list, new Object());
         producerImpl.startProducer();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         Assert.assertTrue(producerImpl.isRunning());
         producerImpl.stopRunning();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         Assert.assertFalse(producerImpl.isRunning());
     }
 }

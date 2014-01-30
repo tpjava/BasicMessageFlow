@@ -4,7 +4,7 @@ package com.perrin.tony.publisher;/**
 
 import com.perrin.tony.publisher.impl.PublisherSingleton;
 import com.perrin.tony.subscribers.Subscriber;
-import junit.framework.Assert;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -36,10 +36,5 @@ public class PublisherSingletonTest {
     public void testPublisher() {
         Publisher publisher = PublisherSingleton.getInstance();
         Assert.assertNotNull(publisher);
-    }
-
-    @Test
-    public void testPublisherOnMessage() {
-        //Mockito.doReturn("hello world").when(mockPublisher).onMessage("hello world");
     }
 }

@@ -3,7 +3,7 @@ package com.perrin.tony.consumer.impl;/**
  */
 
 import com.perrin.tony.producerconsumer.consumer.impl.ConsumerImpl;
-import junit.framework.Assert;
+import org.junit.Assert;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,11 +35,6 @@ public class ConsumerImplTest {
     @Test
     public void testConsumerStartup() {
         consumerImpl.startConsumer();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         Assert.assertTrue(consumerImpl.isRunning());
         consumerImpl.stopRunning();
     }
@@ -47,11 +42,6 @@ public class ConsumerImplTest {
     @Test
     public void testConsumerStop() {
         consumerImpl.startConsumer();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         consumerImpl.stopRunning();
         Assert.assertFalse(consumerImpl.isRunning());
     }

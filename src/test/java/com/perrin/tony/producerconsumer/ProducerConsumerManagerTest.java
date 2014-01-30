@@ -9,7 +9,7 @@ import com.perrin.tony.producerconsumer.consumer.impl.ConsumerListenerImpl;
 import com.perrin.tony.producerconsumer.producer.Producer;
 import com.perrin.tony.producerconsumer.producer.impl.ProducerImpl;
 import com.perrin.tony.publisher.impl.PublisherSingleton;
-import junit.framework.Assert;
+import org.junit.Assert;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -24,8 +24,6 @@ import org.junit.Test;
 public class ProducerConsumerManagerTest {
     private ProducerConsumerManager producerConsumerManager;
     private PublisherSingleton publisherSingleton;
-    private Consumer consumer;
-    private Producer producer;
 
     @Before
     public void testSetUp() {
@@ -63,13 +61,6 @@ public class ProducerConsumerManagerTest {
         PublisherSingleton publisherSingleton = PublisherSingleton.getInstance();
         ConsumerListener consumerListener = new ConsumerListenerImpl(publisherSingleton);
         Assert.assertTrue(producerConsumerManager.addConsumerListener(consumerListener));
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-
     }
 
     @After
